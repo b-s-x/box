@@ -22,13 +22,6 @@ class Observer {
   }
 }
 
-const observer = new Observer();
-
-const unsubscribe = observer.subscribe((data) => {
-  console.log('one', data)
-})
-
-const subscriberA = (data) => console.log("A", data);
 
 
 

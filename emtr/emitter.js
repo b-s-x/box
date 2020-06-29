@@ -1,4 +1,4 @@
-class Emmiter {
+class Emitter {
   constructor() {
     this.events = [];
   }
@@ -17,7 +17,7 @@ class Emmiter {
   }
 };
 
-const emtr = new Emmiter();
+const emtr = new Emitter();
 
 emtr.on('greet', () => {
   console.log('Welcome');

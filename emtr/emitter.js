@@ -4,20 +4,20 @@ class Emmiter {
   }
 
   on(type, listener) {
-    this.events[type] == this.events[type] || [];
+    this.events[type] = this.events[type] || [];
     this.events[type].push(listener)
   }
 
   emit(type) {
     if(this.events[type]) {
-      this.events.forEach((listener) => {
+      this.events[type].forEach((listener) => {
         listener();
       })
     }
   }
 };
 
-const emtr = new Emmiter()
+const emtr = new Emmiter();
 
 emtr.on('greet', () => {
   console.log('Welcome');

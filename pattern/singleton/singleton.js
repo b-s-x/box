@@ -1,6 +1,6 @@
 class Singleton {
   constructor(name) {
-    if(Singleton.instance) {
+    if(!!Singleton.instance) {
       return Singleton.instance;
     }
 
@@ -18,7 +18,7 @@ class Singleton {
 
 const instanceOne = new Singleton('One');
 const instanceTwo = new Singleton('Two');
-const instanceThree = new Singleton('Three');
+const instanceThree = new Singleton('');
 
 console.log(`Name of instance: ${instanceOne.getName()}`);
 console.log(`Name of instance: ${instanceTwo.getName()}`);

@@ -6,13 +6,13 @@ class Singleton {
 
     Singleton.instance = this;
 
-    this.name = name;
+    this._name = name;
 
     return this;
   }
 
   getName() {
-    return this.name;
+    return this._name;
   }
 }
 

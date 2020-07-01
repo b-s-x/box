@@ -1,6 +1,6 @@
 class Singleton {
   constructor(name) {
-    if(!!Singleton.instance) {
+    if(Singleton.instance) {
       return Singleton.instance;
     }
 

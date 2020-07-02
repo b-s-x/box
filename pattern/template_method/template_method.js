@@ -9,37 +9,37 @@ class Builder {
 
 class TeslaBuilder extends Builder {
   addEngine() {
-    console.log('Add Electronic Engine');
+    console.log('Add Tesla Engine');
   }
 
   installChassis() {
-    console.log('installChassis');
+    console.log('Install Tesla chassis');
   }
 
   addElectronic() {
-    console.log('addElectronic');
+    console.log('Add Tesla electronic');
   }
 
   collectAccessories() {
-    console.log('collectAccessories');
+    console.log('Collect Tesla Accesories');
   }
 };
 
 class PorsheBuilder extends Builder {
   addEngine() {
-    console.log('Add Electronic Engine');
+    console.log('Add Porshe Engine');
   }
 
   installChassis() {
-    console.log('installChassis');
+    console.log('Install Porshe chassis');
   }
 
   addElectronic() {
-    console.log('addElectronic');
+    console.log('Add Porshe electronic');
   }
 
   collectAccessories() {
-    console.log('collectAccessories');
+    console.log('Collect Porshe Accesories');
   }
 };
 

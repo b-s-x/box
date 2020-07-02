@@ -25,7 +25,7 @@ class Delivered extends OrderStatus {
   constructor() {
     super('delivered', Delivered)
   }
-}
+};
 
 class Order {
   constructor() {
@@ -47,12 +47,12 @@ const myOrder = new Order();
 
 console.log(myOrder._state._name);
 
-myOrder.cancelOrder()
+myOrder.cancelOrder();
 
 myOrder.nextState();
 console.log(myOrder._state._name);
 
-myOrder.cancelOrder()
+myOrder.cancelOrder();
 
 myOrder.nextState();
 console.log(myOrder._state._name);

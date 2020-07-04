@@ -1,6 +1,7 @@
 class Emitter {
   constructor() {
-    this.events = [];
+    this.events = {};
+    console.log(this.events);
   }
 
   on(type, listener) {
@@ -15,6 +16,10 @@ class Emitter {
       })
     }
   }
+
+  off(type) {
+    return this.events[type] = 0;
+  }
 };
 
 const emtr = new Emitter();
@@ -27,4 +32,11 @@ emtr.on('greet', () => {
   console.log('Greet');
 });
 
+emtr.on('gr', () => {
+  console.log('Gr');
+});
+
 emtr.emit('greet');
+emtr.emit('gr')
+
+emtr.off('gr')

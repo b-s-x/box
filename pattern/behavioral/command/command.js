@@ -16,14 +16,6 @@ class TurnOnCommand {
   execute() {
     this._controller.turnOn();
   }
-
-  undo() {
-    this._controller.turnOff();
-  }
-
-  redo() {
-    this.execute();
-  }
 };
 
 class TurnOffCommand {
@@ -33,14 +25,6 @@ class TurnOffCommand {
 
   execute() {
     this._controller.turnOff();
-  }
-
-  undo() {
-    this._controller.turnOn();
-  }
-
-  redo() {
-    this.execute();
   }
 };
 

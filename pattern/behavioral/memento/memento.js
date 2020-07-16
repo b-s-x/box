@@ -32,7 +32,6 @@ class Editor {
 
 const editor = new Editor()
 
-
 editor.type('1')
 editor.type('2')
 

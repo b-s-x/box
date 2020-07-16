@@ -1,36 +1,52 @@
- class Subject {
+class Subject {
   constructor() {
     this._observers = [];
   }
 
   subscribe(item) {
-    this._observers.push(item);
-    console.log('subscribed');
+    this._observers.push(item)
+    console.log(`${item.getName()} subscribe`);
   }
 
   unsubscribe(item) {
-    this._observers = this._observers.filter((subscriber) => subscriber !== item );
-    console.log('unsubscribed');
+    this._observers = this._observers.filter((sub) => sub !== item)
+    console.log(`${item.getName()} unsubscribe`);
   }
 
   notify(data) {
-    this._observers.forEach((observer) => observer.update(data));
-    console.log('Observers is notified!');
+    this._observers.forEach((observer) => observer.update(data))
   }
 }
 
 class Observer {
+  constructor(name) {
+    this._name = name;
+  }
+
+  getName() {
+    return this._name
+  }
+
   update(newData) {
     this._data = newData;
-    console.log('update', newData);
+    console.log(`${this._name} update`, newData);
   }
 }
 
 const subject = new Subject();
-const observerA = new Observer();
-const observerB = new Observer();
+const observerA = new Observer('observerA')
+const observerB = new Observer('observerB')
 
-subject.subscribe(observerA);
-subject.subscribe(observerB);
+subject.subscribe(observerA)
+subject.subscribe(observerB)
 
-subject.notify({data:'1'});
+subject.notify({data: '1'})
+
+subject.notify({
+  data: {
+    name: 'bsx',
+    date: true,
+  }
+})
+
+subject.unsubscribe(observerB)

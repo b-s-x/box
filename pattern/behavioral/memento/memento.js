@@ -1,4 +1,4 @@
-class EditorMemento {
+class Memento {
   constructor(content) {
     this._content = content
   }
@@ -7,7 +7,6 @@ class EditorMemento {
     return this._content
   }
 }
-
 
 class Editor {
   constructor() {
@@ -23,7 +22,7 @@ class Editor {
   }
 
   save() {
-    return new EditorMemento(this._content)
+    return new Memento(this._content)
   }
 
   restore(memento) {
@@ -33,12 +32,15 @@ class Editor {
 
 const editor = new Editor()
 
-editor.type('This is the first sentence.')
-editor.type('This is second.')
+
+editor.type('1')
+editor.type('2')
+
+console.log(editor.getContent());
 
 const saved = editor.save()
 
-editor.type('And this is third.')
+editor.type('3')
 
 console.log(editor.getContent());
 

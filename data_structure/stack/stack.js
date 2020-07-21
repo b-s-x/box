@@ -13,16 +13,15 @@ class Stack {
     if(this.count === 0) return;
     this.count--
     delete this.storage[this.count];
-    return this.storage
   }
   
   peek() {
-    console.log(this.storage);
-    return this.storage[this.count - 1];
+    return this.storage[this.count];
   }
 
   size() {
     console.log(this.count);
+    console.log(this.storage);
     return this.count;
   }
 }

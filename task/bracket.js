@@ -16,52 +16,28 @@ console.timeEnd('one');
 
 // --------------------------------------------------------------
 
-class Stack {
-    constructor() {
-      this.count = 0;
-      this.storage = {};
-    }
-  
-    push(value) {
-      this.storage[this.count] = value;
-      this.count++
-    }
-  
-    pop() {
-      if(this.count === 0) return;
-      this.count--
-      delete this.storage[this.count];
-    }
-    
-    peek() {
-      return this.storage[this.count];
-    }
-  
-    size() {
-      console.log(this.count);
-      console.log(this.storage);
-      return this.count;
-    }
-  }
-  
 class LiteralCounter {
-    constructor(arr, stack) {
-        this.arr = arr.split('');
-        this.stack = stack;
-    }
+  constructor(arr) {
+      this.arr = arr.split('');
+      this.stack = [];
+  }
 
-    count() {
-        this.arr.forEach((elem) => {   
-            (elem == '{') ? this.stack.push(elem) : this.stack.pop()
-        });
+  count() {
+      this.arr.forEach((elem) => {   
+          (elem == '{') ? this.stack.push(elem) : this.stack.pop()
+      });
+      return this.stack.length
+  }
 
-        return this.stack.size()
-    }
+  result() {
+      this.count()
+
+      if(this.stack.length == 0) return console.log('true')
+      else return console.log('false')
+  }
+
 }
 
-const stack = new Stack();
-const counter = new LiteralCounter(arr, stack);
+const counter = new LiteralCounter(arr);
 
-console.time('two');
-counter.count();
-console.timeEnd('two');
+counter.result();

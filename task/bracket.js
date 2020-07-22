@@ -35,7 +35,6 @@ class LiteralCounter {
       if(this.stack.length == 0) return console.log('true')
       else return console.log('false')
   }
-
 }
 
 const counter = new LiteralCounter(arr);

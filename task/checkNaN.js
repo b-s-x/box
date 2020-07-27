@@ -7,3 +7,15 @@ const checkNaN = (num) => {
 }
 
 checkNaN(0/0) 
+
+const arr = [1, 2, 0/0]
+
+const checkArrNaN = (arr) => {
+    if(arr.includes(NaN)) {
+        return console.log(true);
+    } else {
+        return console.log(false);
+    }
+}
+
+console.log(checkArrNaN(arr));

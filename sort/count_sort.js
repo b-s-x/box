@@ -6,7 +6,6 @@ const countSort = (arr) => {
     const min = Math.min(...arr)
     const max = Math.max(...arr)
 
- 
     for (index = min; index <= max; index++) {
         count[index] = 0;
     }

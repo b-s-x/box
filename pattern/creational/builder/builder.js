@@ -1,51 +1,49 @@
 class Burger {
-  constructor(builder) {
-    this.size = builder.size
-    this.cheese = builder.cheese || false
-    this.pepperoni = builder.pepperoni || false
-    this.lettuce = builder.lettuce || false
-    this.tomato = builder.tomato || false
-  }
+	constructor(builder) {
+        this.size = builder.size
+        this.beef = builder.beef || false
+        this.cheese =  builder.cheese || false
+		this.pepperoni = builder.pepperoni || false
+		this.tomato = builder.tomato || false
+	}
 }
 
 class BurgerBuilder {
-  constructor(size) {
-    this.size = size
-  }
+	constructor(size) {
+    	this.size = size
+	}
 
-  addPepperoni() {
-    this.pepperoni = true
-    console.log('pepperoni');
-    return this
-  }
+	addPepperoni(quantity) {
+		this.pepperoni = quantity;
+		return this
+	}
 
-  addLettuce() {
-    this.lettuce = true
-    console.log('lettuce');
-    return this
-  }
+	addCheese(quantity) {
+		this.cheese = quantity;
+		return this
+	}
 
-  addCheese() {
-    this.cheese = true
-    console.log('cheese');
-    return this
-  }
+	addTomato(quantity) {
+		this.tomato = quantity;
+		return this
+    }
+    
+    addBeef(quantity) {
+        this.beef = quantity;
+        return this
+    }
 
-  addTomato() {
-    this.tomato = true
-    console.log('tomato');
-    return this
-  }
-
-  build() {
-    console.log('Burger is done');
-    return new Burger(this)
-  }
+	build() {
+		console.log('Burger is done');
+		return new Burger(this)
+	}
 }
 
+const burger = (new BurgerBuilder('medium'))
+    // .addPepperoni(4)
+    .addBeef(1)
+	.addTomato(2)
+	.addCheese(3)
+	.build()
 
-const burger = (new BurgerBuilder(14))
-  .addPepperoni()
-  .addTomato()
-  .addCheese()
-  .build()
+console.log(burger);

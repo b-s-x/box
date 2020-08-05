@@ -1,23 +1,23 @@
 const countSort = (arr) => {
-    let i = 0;
-    let z = 0;
+    let index = 0;
+    let pos = 0;
     const count = [];
 
     const min = Math.min(...arr)
     const max = Math.max(...arr)
 
  
-    for (i = min; i <= max; i++) {
-        count[i] = 0;
+    for (index = min; index <= max; index++) {
+        count[index] = 0;
     }
  
-    for (i = 0; i < arr.length; i++) {
-        count[arr[i]]++;
+    for (index = 0; index < arr.length; index++) {
+        count[arr[index]]++;
     }
  
-    for (i = min; i <= max; i++) {
-        while (count[i]-- > 0) {
-            arr[z++] = i;
+    for (index = min; index <= max; index++) {
+        while (count[index]-- > 0) {
+            arr[pos++] = index;
         }
     }
     

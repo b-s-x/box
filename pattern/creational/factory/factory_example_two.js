@@ -1,81 +1,35 @@
 class Server {
-  getDescriprion() {
-    console.log('server');
-  }
+    getDescriprion() {
+        console.log('server run');
+    }
 };
-
-class Client {
-  getDescriprion() {
-    console.log('client');
-  }
-};
-// ____________________________________________________________________
+  
 class BackendPerson {
-  getDescriprion() {
-    console.log("I'm backend developer!");
-  }
+    constructor(name, age) {
+        this._name = name;
+        this._age = age;
+    }
+
+    getDescriprion() {
+        console.log(`Developer name: ${this._name}, age: ${this._age}`);
+        return this._name, this._age;
+    }
 };
 
-class FrontendPerson {
-  getDescriprion() {
-    console.log("I'm frontend developer!");
-  }
-};
-// ____________________________________________________________________
 class BackendFactory {
-  makeServer() {
-    return new Server();
-  };
-
-  backendPerson() {
-    return new BackendPerson();
-  }
+    makeServer() {
+        return new Server();
+    };
+  
+    backendPerson(name, age) {
+        return new BackendPerson(name, age);
+    }
 };
-
-class FrontendFactory {
-  makeClient() {
-    return new Client();
-  };
-
-  frontendPerson() {
-    return new FrontendPerson();
-  }
-};
-// ____________________________________________________________________
+  
 const backendFactory = new BackendFactory();
-
+  
 const server = backendFactory.makeServer();
-const expert = backendFactory.backendPerson();
+const expert = backendFactory.backendPerson('bsx', 25);
 
 server.getDescriprion();
 expert.getDescriprion();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

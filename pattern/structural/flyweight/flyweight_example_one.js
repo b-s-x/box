@@ -1,40 +1,33 @@
-class KarakTea {
-
+class Auto {
+  constructor(model) {
+    this.model = model;
+  }
 }
 
-class TeaMaker {
+class AutoFactory {
   constructor() {
-    this.availableTea = {};
+    this.models = {};
   }
 
-  make(preference) {
-    this.availableTea[preference] = this.availableTea[preference] || (new KarakTea())
-    return this.availableTea[preference]
-  }
-}
+  create(name) {
+    let model = this.models[name];
+    if(model) return model;
 
-class TeaShop {
-  constructor(teaMaker) {
-    this.teaMaker = teaMaker;
-    this.orders = [];
+    console.count('model');
+
+    this.models[name] = new Auto(name)
+    return this.models[name];
   }
 
-  takeOrder(teaType, table) {
-    this.orders[table] = this.teaMaker.make(teaType)
-  }
-
-  serve() {
-    this.orders.forEach((order, index) => {
-      console.log('Serving tea to table#' + index);
-    });
+  getModels() {
+    console.table(this.models)
   }
 }
 
-const teaMaker = new TeaMaker()
-const shop = new TeaShop(teaMaker)
+const factory = new AutoFactory();
 
-shop.takeOrder('less sugar', 1)
-shop.takeOrder('more milk', 2)
-shop.takeOrder('without sugar', 5)
+const bmw = factory.create('BMW')
+const tesla = factory.create('Tesla')
+const blackTesla = factory.create('Tesla')
 
-shop.serve()
+factory.getModels()

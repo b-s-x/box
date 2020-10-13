@@ -6,7 +6,7 @@ const URL = "https://jsonplaceholder.typicode.com/comments"
 const readStream = () => {
     let data = '';
 
-    let reader = fs.createReadStream('data.txt', 'UTF8')
+    fs.createReadStream('data.txt', 'UTF8')
     .on('data', (chunk) => {
         data += chunk
     })
@@ -24,6 +24,7 @@ const stream = async (data) => {
 const options = {
     method: 'GET',
     url: URL,
+    // json: true, 
 }
 
 requestPromise(options)

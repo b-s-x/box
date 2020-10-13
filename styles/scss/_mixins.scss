@@ -1,0 +1,15 @@
+// Mixin allows you to get a frame with the specified parameters
+// - shadow
+// - background-color
+// - border-radius
+//
+// @author b.s.x
+//
+// @example
+// https://codepen.io/bsx/pen/vYKNWYN?editors=1100
+
+@mixin frame($shadow, $background-color, $border-radius: 5px) {
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  background-color: $background-color;
+}

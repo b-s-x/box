@@ -1,0 +1,13 @@
+@import './GothamPro-Bold/font.css';
+
+$color-primary: #080505d7;
+$color-secondary: #ffffff;
+$color-inactive: #BFBFBF;
+$color-strong: #0a0000;
+$windowshadow: 0px 5px 10px rgba(0, 0, 0, 0.22), 0px 0px 1px rgba(0, 0, 0, 0.2);
+
+@mixin font {
+    font-family: GothamPro-Bold;
+    font-size: 16px;
+    line-height: 24px;
+}

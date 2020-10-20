@@ -1,5 +1,5 @@
 <template>
-  <div class="button"
+  <button class="button"
     :type="type"
     :class="classes"
     @click="$emit('click', $event)">
@@ -7,7 +7,7 @@
     <div class="button-text">
       <slot> </slot>
     </div>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -41,6 +41,7 @@ export default {
 <style lang="scss" scoped>
 @import './variables';
 
+
 .button {
   height: 50px;
   display: flex;
@@ -51,6 +52,7 @@ export default {
   cursor: pointer;
   transition: 0.2s;
   outline: none;
+  border: none;
 
   &:active {
     box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.22),

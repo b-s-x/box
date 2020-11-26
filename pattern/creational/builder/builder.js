@@ -1,8 +1,8 @@
 class Burger {
 	constructor(builder) {
-        this.size = builder.size
-        this.beef = builder.beef || false
-        this.cheese =  builder.cheese || false
+    this.size = builder.size
+    this.beef = builder.beef || false
+    this.cheese =  builder.cheese || false
 		this.pepperoni = builder.pepperoni || false
 		this.tomato = builder.tomato || false
 	}
@@ -10,7 +10,7 @@ class Burger {
 
 class BurgerBuilder {
 	constructor(size) {
-    	this.size = size
+    this.size = size
 	}
 
 	addPepperoni(quantity) {
@@ -27,11 +27,11 @@ class BurgerBuilder {
 		this.tomato = quantity;
 		return this
     }
-    
-    addBeef(quantity) {
-        this.beef = quantity;
-        return this
-    }
+
+	addBeef(quantity) {
+		this.beef = quantity;
+		return this
+	}
 
 	build() {
 		console.log('Burger is done');
@@ -40,8 +40,8 @@ class BurgerBuilder {
 }
 
 const burger = (new BurgerBuilder('medium'))
-    // .addPepperoni(4)
-    .addBeef(1)
+	// .addPepperoni(4)
+	.addBeef(1)
 	.addTomato(2)
 	.addCheese(3)
 	.build()

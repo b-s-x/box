@@ -5,7 +5,7 @@ const str:string = "hello"
 const isLoading: boolean = true;
 const int: number = 42;
 
-const arr: number[] = [1, 2, 3]
+// const arr: number[] = [1, 2, 3]
 const arrNew: Array<number> = [1, 2, 3]
 
 const contact:any = ['bsx', 45254]

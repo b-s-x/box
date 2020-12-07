@@ -1,6 +1,6 @@
 // Fisher–Yates shuffle
 function shuffle(arr) {
-  const newArr = arr.map((item) => item);
+  const newArr = [...arr];
 
   for(let item = newArr.length - 1; item > 0; item--) {
     const randomIndex = Math.floor(Math.random() * arr.length);

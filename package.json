@@ -1,0 +1,26 @@
+{
+  "name": "box",
+  "version": "1.0.0",
+  "description": "useful things for something",
+  "main": "example.js",
+  "type": "module",
+  "dependencies": {
+    "d3": "^6.2.0",
+    "node": "^15.3.0",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b-s-x/box.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b-s-x/box/issues"
+  },
+  "homepage": "https://github.com/b-s-x/box#readme"
+}

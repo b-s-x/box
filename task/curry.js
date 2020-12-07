@@ -4,14 +4,14 @@ const join = (a, b, c, d) => {
 
 function curry(func) {
   return function curried(...args) {
-    if (args.length >= func.length) {
-      return func.apply(this, args);
+    if(args.length >= func.length) {
+      return func(...args)
     } else {
-      return function (...args2) {
-        return curried.apply(this, args.concat(args2));
-      };
+      return (...args2) => {
+        return curried(...args.concat(args2))
+      }
     }
-  };
+  }
 }
 
 const curriedJoin = curry(join);

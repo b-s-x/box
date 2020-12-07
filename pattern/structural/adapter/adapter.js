@@ -7,6 +7,7 @@ class CableOne {
 class CableTwo {
   connect() {
     //logic
+    console.log('cableTwo');
   }
 };
 
@@ -18,6 +19,7 @@ class Connection {
 
 class AnotherCable {
   anotherConnect() {
+    //logic
     console.log('Another Cable');
   }
 };
@@ -37,3 +39,6 @@ const adapterCable = new AnotherCableAdapter(anotherCable);
 
 const connection = new Connection();
 connection.port(adapterCable);
+
+const cableTwo = new CableTwo();
+connection.port(cableTwo)

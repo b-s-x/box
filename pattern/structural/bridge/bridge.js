@@ -1,46 +1,88 @@
-class About {
-  constructor(theme) {
-    this.theme = theme;
+// input devices
+class Gestures {
+  constructor(output) {
+    this.output = output;
   }
 
-  getContent() {
-    return 'About page in ' + this.theme.getColor()
+  tap() {
+    this.output.click();
   }
-}
-
-class Careers {
-  constructor(theme) {
-    this.theme = theme
+  swipe() {
+    this.output.move();
   }
-
-  getContent() {
-    return 'Careers page in ' + this.theme.getColor()
-
+  pan() {
+    this.output.drag();
   }
-}
-
-class DarkTheme {
-  getColor() {
-    return 'Dark Black'
+  pinch() {
+    this.output.zoom();
   }
 }
 
-class LightTheme {
-  getColor() {
-    return 'White'
+class Mouse {
+  constructor(output) {
+    this.output = output;
+  }
+
+  click() {
+    this.output.click();
+  }
+  move() {
+    this.output.move();
+  }
+  down() {
+    this.output.drag();
+  }
+  wheel() {
+    this.output.zoom();
   }
 }
 
-class AquaTheme {
-  getColor() {
-    return 'Light Blue'
+// output devices
+
+class Screen {
+  click() {
+    console.log("Screen select");
+  }
+  move() {
+    console.log("Screen move");
+  }
+  drag() {
+    console.log("Screen drag");
+  }
+  zoom() {
+    console.log("Screen zoom in");
   }
 }
 
-const darkTheme = new DarkTheme();
+class Audio {
+  click() {
+    console.log("Sound oink");
+  }
+  move() {
+    console.log("Sound waves");
+  }
+  drag() {
+    console.log("Sound screetch");
+  }
+  zoom() {
+    console.log("Sound volume up");
+  }
+}
 
-const about = new About(darkTheme)
-const careers = new Careers(darkTheme)
+const run = () => {
+  const screen = new Screen();
+  const audio = new Audio();
 
-console.log(about.getContent());
-console.log(careers.getContent());
+  const hand = new Gestures(audio);
+  const mouse = new Mouse(screen);
+
+  hand.tap();
+  hand.swipe();
+  hand.pinch();
+
+  mouse.click();
+  mouse.move();
+  mouse.wheel();
+};
+
+run();

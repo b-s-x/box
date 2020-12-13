@@ -17,6 +17,7 @@ class Singleton {
 }
 
 const instanceOne = new Singleton('One');
+// Singleton.instance = null
 const instanceTwo = new Singleton('Two');
 const instanceThree = new Singleton('');
 

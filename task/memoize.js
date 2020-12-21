@@ -1,5 +1,5 @@
 const memoize = (func) => {
-  const cache = {};
+  const cache = Object.create(null); // {}
 
   return (n) => {
     if(n in cache) return cache[n]

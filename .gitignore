@@ -1,7 +1,7 @@
-index.html
-
 example.js
 
 node_modules
 
-style.css
+cache
+
+dist

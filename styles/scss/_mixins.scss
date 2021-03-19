@@ -1,3 +1,9 @@
+@mixin frame($shadow, $background-color, $border-radius: 5px) {
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  background-color: $background-color;
+}
+
 // Mixin allows you to get a frame with the specified parameters
 // - shadow
 // - background-color
@@ -8,8 +14,21 @@
 // @example
 // https://codepen.io/bsx/pen/vYKNWYN?editors=1100
 
-@mixin frame($shadow, $background-color, $border-radius: 5px) {
-  border-radius: $border-radius;
-  box-shadow: $shadow;
-  background-color: $background-color;
+
+@mixin adaptive($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  #{$property}: calc(
+    #{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+  );
 }
+
+// 20px это минимальный padding
+// 50px изначальнное значение
+// от максимального отнимем минимальное
+// 100vw ширина вьюпорта
+// 320px минимальная ширина экрана под мобильный адаптив;
+// 1600 размер макета
+
+//@example
+// @include adaptive("padding", 50, 20);
+// https://codesandbox.io/s/adaptive-mixin-pom8z
